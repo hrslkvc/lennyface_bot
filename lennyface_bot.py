@@ -3,7 +3,7 @@ import time
 import praw
 from login import *
 
-r = praw.Reddit(user_agent ="Test by /u/ccviper")
+r = praw.Reddit(user_agent ="lennyface reply bot by u/ccviper")
 r.login(USERNAME, PASSWORD)
 
 subreddit = r.get_subreddit("funny")
