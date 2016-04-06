@@ -6,19 +6,20 @@ from login import *
 r = praw.Reddit(user_agent ="lennyface reply bot by u/ccviper")
 r.login(USERNAME, PASSWORD)
 
-subreddit = r.get_subreddit("funny")
+subreddit = r.get_subreddit("funny+leagueoflegends+pics+gifs")
 
-replied = []
 
 def replybot():
-   
+    replied = []
     comments = subreddit.get_comments(limit=1000)
     phrase = "( ͡° ͜ʖ ͡°)"
     
     for comment in comments:        
-        comment_body = comment.body.lower()        
+        comment_body = comment.body.lower()     
+	 
         if phrase in comment_body and comment.id not in replied:
-            comment.reply("( ͡~ ͜ʖ ͡°)")            
+            comment.reply("( ͡~ ͜ʖ ͡°)")   
+	    print("Commenting")         
             replied.append(comment.id)
             
         else:
